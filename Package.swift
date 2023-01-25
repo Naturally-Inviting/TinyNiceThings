@@ -10,9 +10,12 @@ let package = Package(
         .watchOS(.v9)
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "AffirmationsClient", targets: ["AffirmationsClient"]),
         .library(name: "AppCore", targets: ["AppCore"]),
+        .library(name: "ComposableUserNotifications", targets: ["ComposableUserNotifications"]),
+        .library(name: "NotificationHelpers", targets: ["NotificationHelpers"]),
+        .library(name: "NotificationsAuthAlert", targets: ["NotificationsAuthAlert"]),
+        .library(name: "RemoteNotificationsClient", targets: ["RemoteNotificationsClient"]),
     ],
     dependencies: [
         .package(
@@ -33,6 +36,9 @@ let package = Package(
             name: "AppCore",
             dependencies: [
                 "AffirmationsClient",
+                "ComposableUserNotifications",
+                "NotificationHelpers",
+                "RemoteNotificationsClient",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
             ]
         ),
@@ -44,6 +50,36 @@ let package = Package(
             ],
             resources: [
                 .process("Resources")
+            ]
+        ),
+        .target(
+            name: "ComposableUserNotifications",
+            dependencies: [
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+            ]
+        ),
+        .target(
+            name: "NotificationHelpers",
+            dependencies: [
+                "ComposableUserNotifications",
+                "RemoteNotificationsClient"
+            ]
+        ),
+        .target(
+            name: "NotificationsAuthAlert",
+            dependencies: [
+                "ComposableUserNotifications",
+                "NotificationHelpers",
+                "RemoteNotificationsClient",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ]
+        ),
+        .target(
+            name: "RemoteNotificationsClient",
+            dependencies: [
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
             ]
         ),
     ]

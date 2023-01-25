@@ -7,32 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D287F26329809EA500A795DD /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = D287F26229809EA500A795DD /* AppCore */; };
+		D23511DB2980D5EA0081BEF1 /* TinyNiceThingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23511DA2980D5EA0081BEF1 /* TinyNiceThingsApp.swift */; };
+		D23511DD2980D5EA0081BEF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23511DC2980D5EA0081BEF1 /* ContentView.swift */; };
+		D23511DF2980D5EA0081BEF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23511DE2980D5EA0081BEF1 /* Assets.xcassets */; };
+		D23511E32980D5EA0081BEF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23511E22980D5EA0081BEF1 /* Preview Assets.xcassets */; };
+		D23511E82980D6450081BEF1 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = D23511E72980D6450081BEF1 /* AppCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D287F24D2980990F00A795DD /* TinyNiceThings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyNiceThings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D23511D82980D5EA0081BEF1 /* TinyNiceThings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyNiceThings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D23511DA2980D5EA0081BEF1 /* TinyNiceThingsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyNiceThingsApp.swift; sourceTree = "<group>"; };
+		D23511DC2980D5EA0081BEF1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D23511DE2980D5EA0081BEF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D23511E02980D5EA0081BEF1 /* TinyNiceThings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinyNiceThings.entitlements; sourceTree = "<group>"; };
+		D23511E22980D5EA0081BEF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D287F25F298099ED00A795DD /* TinyNiceThings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TinyNiceThings; path = ..; sourceTree = "<group>"; };
-		D287F26029809A4900A795DD /* TinyNiceThings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TinyNiceThings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D287F24A2980990F00A795DD /* Frameworks */ = {
+		D23511D52980D5EA0081BEF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D287F26329809EA500A795DD /* AppCore in Frameworks */,
+				D23511E82980D6450081BEF1 /* AppCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D23511D92980D5EA0081BEF1 /* TinyNiceThings */ = {
+			isa = PBXGroup;
+			children = (
+				D23511DA2980D5EA0081BEF1 /* TinyNiceThingsApp.swift */,
+				D23511DC2980D5EA0081BEF1 /* ContentView.swift */,
+				D23511DE2980D5EA0081BEF1 /* Assets.xcassets */,
+				D23511E02980D5EA0081BEF1 /* TinyNiceThings.entitlements */,
+				D23511E12980D5EA0081BEF1 /* Preview Content */,
+			);
+			path = TinyNiceThings;
+			sourceTree = "<group>";
+		};
+		D23511E12980D5EA0081BEF1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D23511E22980D5EA0081BEF1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		D287F2442980990F00A795DD = {
 			isa = PBXGroup;
 			children = (
 				D287F25F298099ED00A795DD /* TinyNiceThings */,
-				D287F26029809A4900A795DD /* TinyNiceThings */,
+				D23511D92980D5EA0081BEF1 /* TinyNiceThings */,
 				D287F24E2980990F00A795DD /* Products */,
 				D287F26129809EA500A795DD /* Frameworks */,
 			);
@@ -41,7 +69,7 @@
 		D287F24E2980990F00A795DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D287F24D2980990F00A795DD /* TinyNiceThings.app */,
+				D23511D82980D5EA0081BEF1 /* TinyNiceThings.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,13 +84,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D287F24C2980990F00A795DD /* TinyNiceThings */ = {
+		D23511D72980D5EA0081BEF1 /* TinyNiceThings */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D287F25C2980991100A795DD /* Build configuration list for PBXNativeTarget "TinyNiceThings" */;
+			buildConfigurationList = D23511E42980D5EA0081BEF1 /* Build configuration list for PBXNativeTarget "TinyNiceThings" */;
 			buildPhases = (
-				D287F2492980990F00A795DD /* Sources */,
-				D287F24A2980990F00A795DD /* Frameworks */,
-				D287F24B2980990F00A795DD /* Resources */,
+				D23511D42980D5EA0081BEF1 /* Sources */,
+				D23511D52980D5EA0081BEF1 /* Frameworks */,
+				D23511D62980D5EA0081BEF1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -70,10 +98,10 @@
 			);
 			name = TinyNiceThings;
 			packageProductDependencies = (
-				D287F26229809EA500A795DD /* AppCore */,
+				D23511E72980D6450081BEF1 /* AppCore */,
 			);
 			productName = TinyNiceThings;
-			productReference = D287F24D2980990F00A795DD /* TinyNiceThings.app */;
+			productReference = D23511D82980D5EA0081BEF1 /* TinyNiceThings.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -86,7 +114,7 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					D287F24C2980990F00A795DD = {
+					D23511D72980D5EA0081BEF1 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -104,32 +132,116 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D287F24C2980990F00A795DD /* TinyNiceThings */,
+				D23511D72980D5EA0081BEF1 /* TinyNiceThings */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D287F24B2980990F00A795DD /* Resources */ = {
+		D23511D62980D5EA0081BEF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23511E32980D5EA0081BEF1 /* Preview Assets.xcassets in Resources */,
+				D23511DF2980D5EA0081BEF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D287F2492980990F00A795DD /* Sources */ = {
+		D23511D42980D5EA0081BEF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23511DD2980D5EA0081BEF1 /* ContentView.swift in Sources */,
+				D23511DB2980D5EA0081BEF1 /* TinyNiceThingsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		D23511E52980D5EA0081BEF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TinyNiceThings/TinyNiceThings.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TinyNiceThings/Preview Content\"";
+				DEVELOPMENT_TEAM = 97855WC2LR;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.nicethings.TinyNiceThings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D23511E62980D5EA0081BEF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TinyNiceThings/TinyNiceThings.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TinyNiceThings/Preview Content\"";
+				DEVELOPMENT_TEAM = 97855WC2LR;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.nicethings.TinyNiceThings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D287F25A2980991100A795DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -239,85 +351,18 @@
 			};
 			name = Release;
 		};
-		D287F25D2980991100A795DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TinyNiceThings/TinyNiceThings.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TinyNiceThings/Preview Content\"";
-				DEVELOPMENT_TEAM = 97855WC2LR;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.nicethings.TinyNiceThings;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		D287F25E2980991100A795DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TinyNiceThings/TinyNiceThings.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TinyNiceThings/Preview Content\"";
-				DEVELOPMENT_TEAM = 97855WC2LR;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.nicethings.TinyNiceThings;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D23511E42980D5EA0081BEF1 /* Build configuration list for PBXNativeTarget "TinyNiceThings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D23511E52980D5EA0081BEF1 /* Debug */,
+				D23511E62980D5EA0081BEF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D287F2482980990F00A795DD /* Build configuration list for PBXProject "TinyNiceThings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -327,19 +372,10 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D287F25C2980991100A795DD /* Build configuration list for PBXNativeTarget "TinyNiceThings" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D287F25D2980991100A795DD /* Debug */,
-				D287F25E2980991100A795DD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D287F26229809EA500A795DD /* AppCore */ = {
+		D23511E72980D6450081BEF1 /* AppCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppCore;
 		};

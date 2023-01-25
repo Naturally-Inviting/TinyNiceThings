@@ -9,7 +9,7 @@ extension AffirmationsClient: DependencyKey {
     public static var liveValue: AffirmationsClient {
         Self(
             dailyAffirmation: {
-                guard let json = Bundle.module.url(forResource: "affirmations", withExtension: "json", subdirectory: "Resources")
+                guard let json = Bundle.module.url(forResource: "affirmations", withExtension: "json")
                 else { throw AffirmationClientError.dataNotFound }
                 
                 let data = try Data(contentsOf: json)
