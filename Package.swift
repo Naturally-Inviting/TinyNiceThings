@@ -13,9 +13,12 @@ let package = Package(
         .library(name: "AffirmationsClient", targets: ["AffirmationsClient"]),
         .library(name: "AppCore", targets: ["AppCore"]),
         .library(name: "ComposableUserNotifications", targets: ["ComposableUserNotifications"]),
+        .library(name: "ImageRenderClient", targets: ["ImageRenderClient"]),
         .library(name: "NotificationHelpers", targets: ["NotificationHelpers"]),
         .library(name: "NotificationsAuthAlert", targets: ["NotificationsAuthAlert"]),
         .library(name: "RemoteNotificationsClient", targets: ["RemoteNotificationsClient"]),
+        .library(name: "UIApplicationClient", targets: ["UIApplicationClient"]),
+        .library(name: "UIPasteboardClient", targets: ["UIPasteboardClient"]),
     ],
     dependencies: [
         .package(
@@ -29,6 +32,10 @@ let package = Package(
         .package(
             url: "https://github.com/pointfreeco/swift-snapshot-testing",
             from: "1.11.0"
+        ),
+        .package(
+            url: "https://github.com/pointfreeco/swift-gen",
+            from: "0.4.0"
         )
     ],
     targets: [
@@ -37,8 +44,10 @@ let package = Package(
             dependencies: [
                 "AffirmationsClient",
                 "ComposableUserNotifications",
+                "ImageRenderClient",
                 "NotificationHelpers",
                 "RemoteNotificationsClient",
+                "UIApplicationClient",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
             ]
         ),
@@ -46,6 +55,7 @@ let package = Package(
             name: "AffirmationsClient",
             dependencies: [
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "Gen", package: "swift-gen"),
                 .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
             ],
             resources: [
@@ -54,6 +64,13 @@ let package = Package(
         ),
         .target(
             name: "ComposableUserNotifications",
+            dependencies: [
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+            ]
+        ),
+        .target(
+            name: "ImageRenderClient",
             dependencies: [
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
@@ -77,6 +94,21 @@ let package = Package(
         ),
         .target(
             name: "RemoteNotificationsClient",
+            dependencies: [
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+            ]
+        ),
+        .target(
+            name: "UIApplicationClient",
+            dependencies: [
+                "UIPasteboardClient",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+            ]
+        ),
+        .target(
+            name: "UIPasteboardClient",
             dependencies: [
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")

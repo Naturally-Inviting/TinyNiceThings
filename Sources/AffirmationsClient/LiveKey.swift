@@ -1,5 +1,6 @@
 import Dependencies
 import Foundation
+import Gen
 
 public enum AffirmationClientError: Error {
     case dataNotFound
@@ -17,7 +18,9 @@ extension AffirmationsClient: DependencyKey {
                 
                 let affirmations: [Affirmation] = list.compactMap { .init(title: $0) }
                 
-                return affirmations[10]
+                let randomGen = Gen.element(of: affirmations)
+                
+                return randomGen.run() ?? .init(title: "")
             }
         )
     }

@@ -8,33 +8,27 @@ import SwiftUI
 public struct AppReducer: ReducerProtocol {
     // MARK: - State
     public struct State: Equatable {
-        public var affirmation: String
-        public var opacity: CGFloat
         public var appDelegate: AppDelegateReducer.State
+        public var home: Home.State
         
         public init(
-            affirmation: String = "",
-            opacity: CGFloat = .zero,
-            appDelegate: AppDelegateReducer.State = .init()
+            appDelegate: AppDelegateReducer.State = .init(),
+            home: Home.State = .init()
         ) {
-            self.affirmation = affirmation
-            self.opacity = opacity
             self.appDelegate = appDelegate
+            self.home = home
         }
     }
     
     // MARK: - Action
     public enum Action {
-        case task
-        case affirmationLoaded(Affirmation)
-        case transition
         case appDelegate(AppDelegateReducer.Action)
+        case home(Home.Action)
         case signUpForNotifications
     }
     
     public init() {}
     
-    @Dependency(\.affirmations) var affirmations
     @Dependency(\.remoteNotifications) var remoteNotifications
     @Dependency(\.userNotifications) var userNotifications
 
@@ -42,23 +36,6 @@ public struct AppReducer: ReducerProtocol {
     public var body: some ReducerProtocol<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {
-            case .task:
-                return .task {
-                    let affirmation = try await self.affirmations.dailyAffirmation()
-                    return .affirmationLoaded(affirmation)
-                }
-                
-            case let .affirmationLoaded(affirmation):
-                state.affirmation = affirmation.title
-                
-                return .run { send in
-                    await send(.transition, animation: .easeIn(duration: 1.5))
-                }
-                
-            case .transition:
-                state.opacity = 1
-                return .none
-                
             case .signUpForNotifications:
                 return .fireAndForget {
                     if try await self.userNotifications.requestAuthorization([.alert, .sound]) {
@@ -77,6 +54,10 @@ public struct AppReducer: ReducerProtocol {
         Scope(state: \.appDelegate, action: /Action.appDelegate) {
             AppDelegateReducer()
         }
+        
+        Scope(state: \.home, action: /Action.home) {
+            Home()
+        }
     }
 }
 
@@ -93,19 +74,12 @@ public struct AppView: View {
     }
     
     public var body: some View {
-        VStack {
-            Text(viewStore.affirmation)
-                .foregroundColor(.white)
-                .opacity(viewStore.opacity)
-            
-            Button("Register", action: { viewStore.send(.signUpForNotifications) })
-        }
-        .frame(maxHeight: .infinity)
-        .frame(maxWidth: .infinity)
-        .background(Color.black.edgesIgnoringSafeArea(.all))
-        .task {
-            viewStore.send(.task)
-        }
+        HomeView(
+            store: self.store.scope(
+                state: \.home,
+                action: AppReducer.Action.home
+            )
+        )
     }
 }
 

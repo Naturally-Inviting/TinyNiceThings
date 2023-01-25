@@ -17,6 +17,6 @@ extension AffirmationsClient: TestDependencyKey {
     }
     
     public static var previewValue: AffirmationsClient = Self(
-        dailyAffirmation: { .init(title: "I am in control of my own destiny.") }
+        dailyAffirmation: { .init(title: "I am in charge of how I feel and today I am choosing happiness.") }
     )
 }

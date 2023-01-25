@@ -2,6 +2,10 @@ import Foundation
 
 public struct Affirmation {
     public var title: String
+    
+    public init(title: String) {
+        self.title = title
+    }
 }
 
 public struct AffirmationsClient {
