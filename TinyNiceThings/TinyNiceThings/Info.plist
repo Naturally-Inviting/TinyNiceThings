@@ -6,9 +6,11 @@
 	<false/>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>instagram-stories</string>
-    </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>instagram-stories</string>
+	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Grant access to save affirmations to your photo library.</string>
 </dict>
 </plist>
