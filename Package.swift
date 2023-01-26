@@ -12,7 +12,9 @@ let package = Package(
     products: [
         .library(name: "AffirmationsClient", targets: ["AffirmationsClient"]),
         .library(name: "AppCore", targets: ["AppCore"]),
+        .library(name: "ComposableStoreKit", targets: ["ComposableStoreKit"]),
         .library(name: "ComposableUserNotifications", targets: ["ComposableUserNotifications"]),
+        .library(name: "HomeFeature", targets: ["HomeFeature"]),
         .library(name: "ImageRenderClient", targets: ["ImageRenderClient"]),
         .library(name: "NotificationHelpers", targets: ["NotificationHelpers"]),
         .library(name: "NotificationsAuthAlert", targets: ["NotificationsAuthAlert"]),
@@ -42,12 +44,10 @@ let package = Package(
         .target(
             name: "AppCore",
             dependencies: [
-                "AffirmationsClient",
                 "ComposableUserNotifications",
-                "ImageRenderClient",
+                "HomeFeature",
                 "NotificationHelpers",
                 "RemoteNotificationsClient",
-                "UIApplicationClient",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
             ]
         ),
@@ -63,10 +63,27 @@ let package = Package(
             ]
         ),
         .target(
+            name: "ComposableStoreKit",
+            dependencies: [
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+                .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+            ]
+        ),
+        .target(
             name: "ComposableUserNotifications",
             dependencies: [
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+            ]
+        ),
+        .target(
+            name: "HomeFeature",
+            dependencies: [
+                "AffirmationsClient",
+                "ComposableStoreKit",
+                "ImageRenderClient",
+                "UIApplicationClient",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
             ]
         ),
         .target(

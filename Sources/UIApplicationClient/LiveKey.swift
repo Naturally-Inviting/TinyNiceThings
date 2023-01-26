@@ -12,6 +12,7 @@ extension UIApplicationClient: DependencyKey {
         alternateIconName: { UIApplication.shared.alternateIconName },
         alternateIconNameAsync: { await UIApplication.shared.alternateIconName },
         open: { @MainActor in await UIApplication.shared.open($0, options: $1) },
+        canOpen: { @MainActor in UIApplication.shared.canOpenURL($0) },
         openSettingsURLString: { await UIApplication.openSettingsURLString },
         setAlternateIconName: { @MainActor in try await UIApplication.shared.setAlternateIconName($0) },
         setUserInterfaceStyle: { userInterfaceStyle in

@@ -14,16 +14,21 @@ public struct Home: ReducerProtocol {
         public var isShareVisible: Bool
         public var renderedImage: UIImage
         public var displayScale: CGFloat
+        public var canOpenInstagram: Bool
         
         public init(
             affirmation: String = "",
-            opacity: CGFloat = .zero
+            opacity: CGFloat = .zero,
+            isShareVisible: Bool = false,
+            displayScale: CGFloat = .zero,
+            canOpenInstagram: Bool = false
         ) {
             self.affirmation = affirmation
             self.opacity = opacity
-            self.isShareVisible = false
+            self.isShareVisible = isShareVisible
             self.renderedImage = .init()
-            self.displayScale = .zero
+            self.displayScale = displayScale
+            self.canOpenInstagram = canOpenInstagram
         }
     }
     
@@ -37,21 +42,30 @@ public struct Home: ReducerProtocol {
         case imageGenrated(image: UIImage)
         case setDisplayScale(scale: CGFloat)
         case instagramLogoTapped
+        case setCanOpenInstagram(canOpen: Bool)
     }
     
     @Dependency(\.affirmations) var affirmations
     @Dependency(\.imageRender) var imageRender
     @Dependency(\.applicationClient) var applicationClient
     
+    public init() {}
+    
     // MARK: - Reducer Body
     public var body: some ReducerProtocol<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {
             case .task:
-                return .task {
-                    let affirmation = try await self.affirmations.dailyAffirmation()
-                    return .affirmationLoaded(affirmation)
-                }
+                return .merge(
+                    .task {
+                        let affirmation = try await self.affirmations.dailyAffirmation()
+                        return .affirmationLoaded(affirmation)
+                    },
+                    .task {
+                        let canOpen = self.applicationClient.canOpen(UIApplicationClient.instagramUrlScheme)
+                        return .setCanOpenInstagram(canOpen: canOpen)
+                    }
+                )
                 
             case let .affirmationLoaded(affirmation):
                 state.affirmation = affirmation.title
@@ -67,10 +81,13 @@ public struct Home: ReducerProtocol {
                 
             case .generateImage:
                 return .task { [state] in
-                    let renderView = RenderView(
-                        title: state.affirmation,
-                        opacity: 1
-                    )
+                    let renderView = ZStack {
+                        AffirmationView(
+                            title: state.affirmation,
+                            opacity: 1
+                        )
+                        
+                    }
                     .frame(width: 428)
                     .frame(height: 926)
                     
@@ -90,6 +107,10 @@ public struct Home: ReducerProtocol {
                 state.opacity = 1
                 return .none
                 
+            case let .setCanOpenInstagram(canOpen):
+                state.canOpenInstagram = canOpen
+                return .none
+                
             case .instagramLogoTapped:
                 return .fireAndForget { [image = state.renderedImage] in
                     guard let png = image.pngData() else { return }
@@ -103,7 +124,7 @@ public struct Home: ReducerProtocol {
     }
 }
 
-public struct RenderView: View {
+public struct AffirmationView: View {
     @Environment(\.colorScheme) var colorScheme
 
     var title: String
@@ -148,14 +169,16 @@ public struct HomeView: View {
     
     public var body: some View {
         ZStack {
-            RenderView(
+            AffirmationView(
                 title: viewStore.affirmation,
                 opacity: viewStore.opacity
             )
             
             VStack(spacing: 32) {
-                Button(action: { viewStore.send(.instagramLogoTapped) }) {
-                    InstagramLogo()
+                if viewStore.canOpenInstagram {
+                    Button(action: { viewStore.send(.instagramLogoTapped) }) {
+                        InstagramLogo()
+                    }
                 }
                 
                 Button(action: { viewStore.send(.setShareVisible(visible: true))}) {

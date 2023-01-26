@@ -3,16 +3,14 @@ import Foundation
 import UIPasteboardClient
 
 extension UIApplicationClient {
+    public static var instagramUrlScheme: URL {
+        URL(string: "instagram-stories://share")!
+    }
+    
     @discardableResult
     public func shareImageToInstagramStories(_ imageData: Data) async -> Bool {
         @Dependency(\.date) var date
         @Dependency(\.pasteboardClient) var pasteboard
-        
-        let urlScheme = URL(
-            string: "instagram-stories://share"
-        )
-        
-        guard let urlScheme else { return false }
         
         // Expire pasteboard items in 5 minutes
         let pasteboardOptions = [
@@ -24,6 +22,6 @@ extension UIApplicationClient {
             pasteboardOptions
         )
         
-        return await self.open(urlScheme, [:])
+        return await self.open(UIApplicationClient.instagramUrlScheme, [:])
     }
 }

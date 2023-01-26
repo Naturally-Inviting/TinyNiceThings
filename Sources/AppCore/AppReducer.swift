@@ -1,6 +1,7 @@
 import AffirmationsClient
 import ComposableArchitecture
 import ComposableUserNotifications
+import HomeFeature
 import NotificationHelpers
 import RemoteNotificationsClient
 import SwiftUI
