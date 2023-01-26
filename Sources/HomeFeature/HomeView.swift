@@ -56,12 +56,12 @@ public struct Home: ReducerProtocol {
             case .task:
                 return .merge(
                     .task {
-                        let affirmation = try await self.affirmations.dailyAffirmation()
-                        return .affirmationLoaded(affirmation)
-                    },
-                    .task {
                         let canOpen = self.applicationClient.canOpen(UIApplicationClient.instagramUrlScheme)
                         return .setCanOpenInstagram(canOpen: canOpen)
+                    },
+                    .task {
+                        let affirmation = try await self.affirmations.dailyAffirmation()
+                        return .affirmationLoaded(affirmation)
                     }
                 )
                 
