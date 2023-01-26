@@ -84,6 +84,9 @@ let package = Package(
                 "ImageRenderClient",
                 "UIApplicationClient",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
+            ],
+            resources: [
+                .process("Resources/assets")
             ]
         ),
         .target(

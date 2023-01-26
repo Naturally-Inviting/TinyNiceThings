@@ -4,8 +4,6 @@ import ImageRenderClient
 import SwiftUI
 import UIApplicationClient
 
-// https://ishanchhabra.com/thoughts/sharing-to-instagram-stories
-
 public struct Home: ReducerProtocol {
     // MARK: - State
     public struct State: Equatable {
@@ -81,16 +79,7 @@ public struct Home: ReducerProtocol {
                 
             case .generateImage:
                 return .task { [state] in
-                    let renderView = ZStack {
-                        AffirmationView(
-                            title: state.affirmation,
-                            opacity: 1
-                        )
-                        
-                    }
-                    .frame(width: 428)
-                    .frame(height: 926)
-                    
+                    let renderView = SharedView(title: state.affirmation)
                     let image = await self.imageRender.render(renderView, scale: state.displayScale)
                     return .imageGenrated(image: image)
                 }
@@ -232,6 +221,54 @@ struct InstagramLogo: View {
     }
 }
 
+struct SharedView: View {
+    var title: String
+    var isShowingAppDetails: Bool = true
+    
+    var body: some View {
+        ZStack {
+            AffirmationView(
+                title: title,
+                opacity: 1
+            )
+            
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Image(uiImage: UIImage(named: "logo", in: .module, with: nil) ?? .init())
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .stroke(Color.white, lineWidth: 1)
+                        )
+                    
+                    VStack(alignment: .leading) {
+                        Text("Tiny Nice Things")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        Text("Daily affirmations delivered")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                    .padding(.leading, 8)
+                    Spacer()
+                }
+                .padding(12)
+                .background(.thinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .padding()
+                .environment(\.colorScheme, .dark)
+            }
+        }
+        .frame(width: 428)
+        .frame(height: 926)
+    }
+}
+
 // MARK: - Preview
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
@@ -241,5 +278,10 @@ struct HomeView_Previews: PreviewProvider {
                 reducer: Home()
             )
         )
+        
+        SharedView(
+            title: "I have the wisdom to make the right decisions for me."
+        )
+        .previewLayout(.sizeThatFits)
     }
 }
