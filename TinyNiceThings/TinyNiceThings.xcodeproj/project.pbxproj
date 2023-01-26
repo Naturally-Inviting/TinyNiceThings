@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		D23511DB2980D5EA0081BEF1 /* TinyNiceThingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23511DA2980D5EA0081BEF1 /* TinyNiceThingsApp.swift */; };
 		D23511DD2980D5EA0081BEF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23511DC2980D5EA0081BEF1 /* ContentView.swift */; };
-		D23511DF2980D5EA0081BEF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23511DE2980D5EA0081BEF1 /* Assets.xcassets */; };
 		D23511E32980D5EA0081BEF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23511E22980D5EA0081BEF1 /* Preview Assets.xcassets */; };
 		D23511E82980D6450081BEF1 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = D23511E72980D6450081BEF1 /* AppCore */; };
+		D25F23E329822B4B00D6FC59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23511DE2980D5EA0081BEF1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,8 +144,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25F23E329822B4B00D6FC59 /* Assets.xcassets in Resources */,
 				D23511E32980D5EA0081BEF1 /* Preview Assets.xcassets in Resources */,
-				D23511DF2980D5EA0081BEF1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +169,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = TinyNiceThings/TinyNiceThings.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -179,6 +179,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TinyNiceThings/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TinyNiceThings;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -195,7 +197,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.nicethings.TinyNiceThings;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.TinyNiceThings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -212,7 +214,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = TinyNiceThings/TinyNiceThings.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -222,6 +224,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TinyNiceThings/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TinyNiceThings;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -238,7 +242,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.nicethings.TinyNiceThings;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naturallyinviting.TinyNiceThings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
