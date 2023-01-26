@@ -190,7 +190,7 @@ public struct HomeView: View {
                 get: \.isShareVisible,
                 send: Home.Action.setShareVisible(visible:))
         ) {
-            ActivityViewController(
+            ActivityView(
                 activityItems: [viewStore.renderedImage]
             )
             .presentationDetents([.medium, .large])
