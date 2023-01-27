@@ -36,7 +36,7 @@ public struct AppDelegateReducer: ReducerProtocol {
                         switch settings.authorizationStatus {
                         case .authorized:
                             guard
-                                try await self.userNotifications.requestAuthorization([.alert, .sound])
+                                try await self.userNotifications.requestAuthorization([.alert, .sound, .badge])
                             else { return }
                         case .notDetermined, .provisional:
                             guard try await self.userNotifications.requestAuthorization(.provisional)
@@ -47,7 +47,6 @@ public struct AppDelegateReducer: ReducerProtocol {
                         
                         await self.registerForRemoteNotifications()
                     }
-                    
                 }
             }
             

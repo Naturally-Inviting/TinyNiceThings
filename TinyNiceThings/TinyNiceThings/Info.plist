@@ -12,5 +12,7 @@
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Grant access to save affirmations to your photo library.</string>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>Deliver affirmations to you!</string>
 </dict>
 </plist>

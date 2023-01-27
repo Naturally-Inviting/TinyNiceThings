@@ -39,13 +39,16 @@ public struct AppReducer: ReducerProtocol {
             switch action {
             case .signUpForNotifications:
                 return .fireAndForget {
-                    if try await self.userNotifications.requestAuthorization([.alert, .sound]) {
+                    if try await self.userNotifications.requestAuthorization([.alert, .sound, .badge]) {
                         await registerForRemoteNotificationsAsync(
                             remoteNotifications: self.remoteNotifications,
                             userNotifications: self.userNotifications
                         )
                     }
                 }
+                
+            case .home(.task):
+                return .task { .signUpForNotifications }
                 
             default:
                 return .none

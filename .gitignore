@@ -90,3 +90,5 @@ fastlane/test_output
 iOSInjectionProject/
 TinyNiceThings/.DS_Store
 .DS_Store
+payload.apns
+TinyNiceThings/.DS_Store
