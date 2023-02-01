@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D21E25DC298AEB41007231E9 /* HummingExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = D21E25DB298AEB41007231E9 /* HummingExtensions */; };
+		D21E25DF298AF2E8007231E9 /* HummingExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = D21E25DE298AF2E8007231E9 /* HummingExtensions */; };
 		D23511DB2980D5EA0081BEF1 /* TinyNiceThingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23511DA2980D5EA0081BEF1 /* TinyNiceThingsApp.swift */; };
 		D23511DD2980D5EA0081BEF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23511DC2980D5EA0081BEF1 /* ContentView.swift */; };
 		D23511E32980D5EA0081BEF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D23511E22980D5EA0081BEF1 /* Preview Assets.xcassets */; };
@@ -31,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D21E25DC298AEB41007231E9 /* HummingExtensions in Frameworks */,
+				D21E25DF298AF2E8007231E9 /* HummingExtensions in Frameworks */,
 				D23511E82980D6450081BEF1 /* AppCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +103,7 @@
 			name = TinyNiceThings;
 			packageProductDependencies = (
 				D23511E72980D6450081BEF1 /* AppCore */,
-				D21E25DB298AEB41007231E9 /* HummingExtensions */,
+				D21E25DE298AF2E8007231E9 /* HummingExtensions */,
 			);
 			productName = TinyNiceThings;
 			productReference = D23511D82980D5EA0081BEF1 /* TinyNiceThings.app */;
@@ -134,7 +134,7 @@
 			);
 			mainGroup = D287F2442980990F00A795DD;
 			packageReferences = (
-				D21E25DA298AEB41007231E9 /* XCRemoteSwiftPackageReference "humming-swift-extensions" */,
+				D21E25DD298AF2E8007231E9 /* XCRemoteSwiftPackageReference "humming-swift-extensions" */,
 			);
 			productRefGroup = D287F24E2980990F00A795DD /* Products */;
 			projectDirPath = "";
@@ -393,20 +393,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D21E25DA298AEB41007231E9 /* XCRemoteSwiftPackageReference "humming-swift-extensions" */ = {
+		D21E25DD298AF2E8007231E9 /* XCRemoteSwiftPackageReference "humming-swift-extensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:humminghomes/humming-swift-extensions.git";
+			repositoryURL = "https://github.com/humminghomes/humming-swift-extensions.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D21E25DB298AEB41007231E9 /* HummingExtensions */ = {
+		D21E25DE298AF2E8007231E9 /* HummingExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D21E25DA298AEB41007231E9 /* XCRemoteSwiftPackageReference "humming-swift-extensions" */;
+			package = D21E25DD298AF2E8007231E9 /* XCRemoteSwiftPackageReference "humming-swift-extensions" */;
 			productName = HummingExtensions;
 		};
 		D23511E72980D6450081BEF1 /* AppCore */ = {

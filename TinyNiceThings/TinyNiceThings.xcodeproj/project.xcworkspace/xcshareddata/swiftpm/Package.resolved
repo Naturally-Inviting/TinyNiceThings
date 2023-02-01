@@ -12,10 +12,10 @@
     {
       "identity" : "humming-swift-extensions",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:humminghomes/humming-swift-extensions.git",
+      "location" : "https://github.com/humminghomes/humming-swift-extensions.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "e87c0fde145ca5b1999604af2c34627e1620d44b"
+        "revision" : "e87c0fde145ca5b1999604af2c34627e1620d44b",
+        "version" : "0.1.1"
       }
     },
     {
