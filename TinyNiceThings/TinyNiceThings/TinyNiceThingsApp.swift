@@ -2,6 +2,8 @@ import AppCore
 import ComposableArchitecture
 import SwiftUI
 
+import HummingExtensions
+
 final class AppDelegate: NSObject, UIApplicationDelegate {
     #if DEBUG
     static let appReducer = AppReducer()._printChanges()
