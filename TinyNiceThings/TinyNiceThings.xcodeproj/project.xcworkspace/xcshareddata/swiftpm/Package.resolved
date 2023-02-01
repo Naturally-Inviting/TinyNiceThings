@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "humming-swift-extensions",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:humminghomes/humming-swift-extensions.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e87c0fde145ca5b1999604af2c34627e1620d44b"
+      }
+    },
+    {
       "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths",
@@ -91,12 +100,30 @@
       }
     },
     {
+      "identity" : "swiftdate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftDate",
+      "state" : {
+        "revision" : "5d943224c3bb173e6ecf27295611615eba90c80e",
+        "version" : "7.0.0"
+      }
+    },
+    {
       "identity" : "swiftui-navigation",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swiftui-navigation",
       "state" : {
         "revision" : "ddc01cdcddfd30ef7a966049b2e1d251e224ad93",
         "version" : "0.5.0"
+      }
+    },
+    {
+      "identity" : "url-image",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dmytro-anokhin/url-image",
+      "state" : {
+        "revision" : "4042f955f1fdff00ced85545e1eecdbf969b5cd0",
+        "version" : "3.1.1"
       }
     },
     {
