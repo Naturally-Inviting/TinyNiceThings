@@ -19,5 +19,5 @@ jobs:
     - name: Install SSH Client 🔑
       uses: webfactory/ssh-agent@v0.4.0
       with:
-        ssh-private-key: ${{ secrets.KEY }}
+        ssh-private-key: ${{ secrets.KEY_TEST }}
     - run: cd TinyNiceThings && xcodebuild -scheme Tiny -destination 'platform=iOS Simulator,name=iPhone 14'
